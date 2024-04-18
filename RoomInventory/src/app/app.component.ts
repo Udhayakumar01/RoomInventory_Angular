@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';  
 import { BrowserModule } from '@angular/platform-browser';
-import { Room } from './Rooms';
+import { Room, RoomList } from './Rooms';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +20,36 @@ export class AppComponent {
     totalRooms : 30,
     bookedRooms : 10
   }
+
+  roomList: RoomList[] = [
+    {
+      roomNumber: 1,
+      roomType: 'Deluxe',
+      amenities: 'Air-Conditioner, Free Wi-Fi, TV, Beverages, Kitchen',
+      price: 5000,
+      photos: 'img',
+      checkInTime: new Date(),
+      checkOutTime: new Date()
+    },
+    {
+      roomNumber: 2,
+      roomType: 'Private Suite',
+      amenities: 'Air-Conditioner, Free Wi-Fi, TV, Beverages, Kitchen',
+      price: 5000,
+      photos: 'img',
+      checkInTime: new Date(),
+      checkOutTime: new Date()
+    },
+    {
+      roomNumber: 3,
+      roomType: 'Deluxe Room',
+      amenities: 'Air-Conditioner, Free Wi-Fi, TV, Beverages, Kitchen',
+      price: 5000,
+      photos: 'img',
+      checkInTime: new Date(),
+      checkOutTime: new Date()
+    }
+  ];
   toggle()
   {
       this.hideRooms = !this.hideRooms;
