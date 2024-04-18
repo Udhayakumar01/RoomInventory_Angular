@@ -1,5 +1,5 @@
 export interface Room{
     availableRooms:number;
-    totalRooms:number;
+    totalRooms?:number;
     bookedRooms:number
 }
