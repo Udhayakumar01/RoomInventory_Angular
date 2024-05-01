@@ -1,17 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';  
-import { BrowserModule } from '@angular/platform-browser';
-import { Room, RoomList } from './Rooms';
+import { Room, RoomList } from '../Rooms';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  //template: '<h1>My first angular app from inline</h1>', -- inline HTML Template
-  styleUrl: './app.component.scss',
-  //styles: ['h1{color:red;}'] -- inline Style
+  selector: 'app-rooms',
+  templateUrl: './rooms.component.html',
+  styleUrl: './rooms.component.scss'
 })
-export class AppComponent {
+export class RoomsComponent {
   title = 'RoomInventoryApp';
   numberOfRooms = 10;
   hideRooms = true;
@@ -54,5 +49,5 @@ export class AppComponent {
   {
       this.hideRooms = !this.hideRooms;
   }
-  role = 'User';
+
 }
