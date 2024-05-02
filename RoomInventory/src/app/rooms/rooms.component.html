@@ -2,8 +2,11 @@
 <p> No Of Rooms </p>
 <div [innerText] = "numberOfRooms" [hidden] = "hideRooms  "></div> <!--Property data binding(Property Binding)-->
 {{'TotalRoom: ' + room?.totalRooms ?? 'No Room'}}
-<div *ngIf = "room.availableRooms > 0"> <!--structural directive, using the hidden property will hide the DOM element 
+<!-- <div *ngIf = "room.availableRooms > 0"> <structural directive, using the hidden property will hide the DOM element 
   but it will still be there which causes performance issues this can be resolved vy using *ngIf directive -->
+    <!-- Rooms List
+</div> -->
+<div [ngStyle] = "{'color': room.availableRooms > 0 ? 'green' : 'red'}"> 
     Rooms List
 </div>
 <table>
@@ -17,7 +20,9 @@
     <th>CheckIn Time</th>
     <th>CheckOut Time</th>
   </tr>
-  <tr *ngFor="let room of roomList; let e = even; let o = odd; let i = index">
+  <tr 
+  [ngClass]="e ? 'even' : 'odd'"
+  *ngFor="let room of roomList; let e = even; let o = odd; let i = index">
     <td>{{i}}</td>
     <td>{{e ? "Even" : "Odd"}}</td>
     <td>{{room.roomNumber}}</td>

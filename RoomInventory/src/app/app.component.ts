@@ -54,5 +54,5 @@ export class AppComponent {
   {
       this.hideRooms = !this.hideRooms;
   }
-  role = 'User';
+  role = 'Admin';
 }
