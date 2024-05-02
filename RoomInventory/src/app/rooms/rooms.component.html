@@ -6,7 +6,7 @@
   but it will still be there which causes performance issues this can be resolved vy using *ngIf directive -->
     <!-- Rooms List
 </div> -->
-{{roomList|json}} <!--Json Pipe-->
+<!--{{roomList|json}} <!--Json Pipe-->
 <div [ngStyle] = "{'color': room.availableRooms > 0 ? 'green' : 'red'}"> 
     Rooms List
 </div>
@@ -24,8 +24,7 @@
   </tr>
   <tr 
   [ngClass]="e ? 'even' : 'odd'"
-  *ngFor="let room of roomList | slice : 0:3
-  ; let e = even; let o = odd; let i = index">
+  *ngFor="let room of roomList | slice : 0:3; let e = even; let o = odd; let i = index">
     <td>{{i| percent}}</td>
     <td>{{e ? "Even" : "Odd"}}</td>
     <td>{{room.roomNumber}}</td>
@@ -34,7 +33,7 @@
     <td>{{room.amenities | titlecase}}</td>
     <td>{{room.checkInTime | date : 'dd/MM/yyyy'}}</td> <!--Date Pipe Example-->
     <td>{{room.checkOutTime | date : 'short'}}</td> <!--Date Pipe Example-->
-    <td>{{room.ratings | number : '1.1-1' : 'en-kr'}}</td>
+    <td>{{room.ratings | number : '1.1-1'}}</td>
     >
 
   </tr>
