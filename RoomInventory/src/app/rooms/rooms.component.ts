@@ -24,7 +24,8 @@ export class RoomsComponent {
       price: 5000,
       photos: 'img',
       checkInTime: new Date(),
-      checkOutTime: new Date()
+      checkOutTime: new Date(),
+      ratings:3.2
     },
     {
       roomNumber: 2,
@@ -33,7 +34,8 @@ export class RoomsComponent {
       price: 5000,
       photos: 'img',
       checkInTime: new Date(),
-      checkOutTime: new Date()
+      checkOutTime: new Date(),
+      ratings:4.6
     },
     {
       roomNumber: 3,
@@ -42,7 +44,8 @@ export class RoomsComponent {
       price: 5000,
       photos: 'img',
       checkInTime: new Date(),
-      checkOutTime: new Date()
+      checkOutTime: new Date(),
+      ratings:4.2
     }
   ];
   toggle()
