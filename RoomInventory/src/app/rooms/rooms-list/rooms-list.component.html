@@ -1,4 +1,5 @@
 <table class = "table">
+    <tbody>
     <tr>
       <th>Index</th>
       <th>Even/Odd</th>
@@ -9,9 +10,9 @@
       <th>CheckIn Time</th>
       <th>CheckOut Time</th>
       <th>Rating</th>
+      <th>Selected Room</th>
     </tr>
-    <tr 
-    [ngClass]="e ? 'even' : 'odd'"
+    <tr [ngClass]="e ? 'even' : 'odd'"
     *ngFor="let room of rooms | slice : 0:3; let e = even; let o = odd; let i = index">
       <td>{{i| percent}}</td>
       <td>{{e ? "Even" : "Odd"}}</td>
@@ -22,7 +23,7 @@
       <td>{{room.checkInTime | date : 'dd/MM/yyyy'}}</td> <!--Date Pipe Example-->
       <td>{{room.checkOutTime | date : 'short'}}</td> <!--Date Pipe Example-->
       <td>{{room.ratings | number : '1.1-1'}}</td>
-      >
-  
+      <td><button class="btn btn-primary" (click)="selectRoom(room)">Select</button></td>
     </tr>
-  </table>
+</tbody>
+</table>

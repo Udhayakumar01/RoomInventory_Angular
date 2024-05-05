@@ -11,6 +11,6 @@
     Rooms List
 </div>
 <div class="table">
-<app-rooms-list [rooms] = "roomList"></app-rooms-list> <!--Child Component -->
+<app-rooms-list [rooms] = "roomList" (selectedRoom)="selectedRoom($event)"></app-rooms-list> <!--Child Component -->
 </div>
 <button (click) = "toggle()">Toggle</button> <!--Event data binding(Event Binding)-->

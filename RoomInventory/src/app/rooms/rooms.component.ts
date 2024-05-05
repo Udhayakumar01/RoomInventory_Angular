@@ -7,7 +7,7 @@ import { Room, RoomList } from '../Rooms';
   styleUrl: './rooms.component.scss'
 })
 export class RoomsComponent implements OnInit {
-  
+
   title = 'RoomInventoryApp';
   numberOfRooms = 10;
   hideRooms = true;
@@ -52,7 +52,10 @@ export class RoomsComponent implements OnInit {
       }
     ];
   }
-  
+  selectedRoom(room : RoomList)
+  {
+    console.log(room);
+  }
   toggle()
   {
       this.hideRooms = !this.hideRooms;
