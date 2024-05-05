@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Room, RoomList } from '../Rooms';
 
 @Component({
@@ -6,7 +6,8 @@ import { Room, RoomList } from '../Rooms';
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.scss'
 })
-export class RoomsComponent {
+export class RoomsComponent implements OnInit {
+  
   title = 'RoomInventoryApp';
   numberOfRooms = 10;
   hideRooms = true;
@@ -16,38 +17,42 @@ export class RoomsComponent {
     bookedRooms : 10
   }
 
-  roomList: RoomList[] = [
-    {
-      roomNumber: 1,
-      roomType: 'Deluxe',
-      amenities: 'Air-Conditioner, Free Wi-Fi, TV, Beverages, Kitchen',
-      price: 5000,
-      photos: 'img',
-      checkInTime: new Date(),
-      checkOutTime: new Date(),
-      ratings:3.2
-    },
-    {
-      roomNumber: 2,
-      roomType: 'Private Suite',
-      amenities: 'Air-Conditioner, Free Wi-Fi, TV, Beverages, Kitchen',
-      price: 5000,
-      photos: 'img',
-      checkInTime: new Date(),
-      checkOutTime: new Date(),
-      ratings:4.6
-    },
-    {
-      roomNumber: 3,
-      roomType: 'Deluxe Room',
-      amenities: 'Air-Conditioner, Free Wi-Fi, TV, Beverages, Kitchen',
-      price: 5000,
-      photos: 'img',
-      checkInTime: new Date(),
-      checkOutTime: new Date(),
-      ratings:4.2
-    }
-  ];
+  roomList: RoomList[] = []
+  ngOnInit(): void {
+    this.roomList = [
+      {
+        roomNumber: 1,
+        roomType: 'Deluxe',
+        amenities: 'Air-Conditioner, Free Wi-Fi, TV, Beverages, Kitchen',
+        price: 5000,
+        photos: 'img',
+        checkInTime: new Date(),
+        checkOutTime: new Date(),
+        ratings:3.2
+      },
+      {
+        roomNumber: 2,
+        roomType: 'Private Suite',
+        amenities: 'Air-Conditioner, Free Wi-Fi, TV, Beverages, Kitchen',
+        price: 5000,
+        photos: 'img',
+        checkInTime: new Date(),
+        checkOutTime: new Date(),
+        ratings:4.6
+      },
+      {
+        roomNumber: 3,
+        roomType: 'Deluxe Room',
+        amenities: 'Air-Conditioner, Free Wi-Fi, TV, Beverages, Kitchen',
+        price: 5000,
+        photos: 'img',
+        checkInTime: new Date(),
+        checkOutTime: new Date(),
+        ratings:4.2
+      }
+    ];
+  }
+  
   toggle()
   {
       this.hideRooms = !this.hideRooms;
