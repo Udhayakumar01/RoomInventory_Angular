@@ -13,7 +13,7 @@
       <th>Selected Room</th>
     </tr>
     <tr [ngClass]="e ? 'even' : 'odd'"
-    *ngFor="let room of rooms | slice : 0:3; let e = even; let o = odd; let i = index">
+    *ngFor="let room of rooms | slice : 0:10; let e = even; let o = odd; let i = index">
       <td>{{i| percent}}</td>
       <td>{{e ? "Even" : "Odd"}}</td>
       <td>{{room.roomNumber}}</td>

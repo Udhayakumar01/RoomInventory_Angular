@@ -16,7 +16,7 @@ export class RoomsComponent implements OnInit {
     totalRooms : 30,
     bookedRooms : 10
   }
-
+  selectedRooms!:RoomList;
   roomList: RoomList[] = []
   ngOnInit(): void {
     this.roomList = [
@@ -54,7 +54,22 @@ export class RoomsComponent implements OnInit {
   }
   selectedRoom(room : RoomList)
   {
+    this.selectedRooms = room;
     console.log(room);
+  }
+  addRoom()
+  {
+    const room:RoomList = {
+      roomNumber: 4,
+      roomType: 'Deluxe Room',
+      amenities: 'Air-Conditioner, Free Wi-Fi, TV, Beverages, Kitchen',
+      price: 5000,
+      photos: 'img',
+      checkInTime: new Date(),
+      checkOutTime: new Date(),
+      ratings:4.2
+    } 
+    this.roomList = [...this.roomList, room];
   }
   toggle()
   {
