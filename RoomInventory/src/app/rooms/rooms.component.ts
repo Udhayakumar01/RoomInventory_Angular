@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { Room, RoomList } from '../Rooms';
 
 @Component({
@@ -6,8 +6,8 @@ import { Room, RoomList } from '../Rooms';
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.scss'
 })
-export class RoomsComponent implements OnInit {
-
+export class RoomsComponent implements OnInit, DoCheck {
+  
   title = 'RoomInventoryApp';
   numberOfRooms = 10;
   hideRooms = true;
@@ -52,6 +52,12 @@ export class RoomsComponent implements OnInit {
       }
     ];
   }
+
+  ngDoCheck(): void {
+    console.log('On Change is Called');
+  }
+
+
   selectedRoom(room : RoomList)
   {
     this.selectedRooms = room;
@@ -74,6 +80,7 @@ export class RoomsComponent implements OnInit {
   toggle()
   {
       this.hideRooms = !this.hideRooms;
+      this.title = 'Rooms List';
   }
 
 }
